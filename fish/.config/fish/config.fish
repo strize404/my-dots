@@ -10,6 +10,9 @@ alias nv='nvim'
 alias gc='git clone'
 alias lg='lazygit'
 
+set -g fish_key_bindings fish_vi_key_bindings
+set -g fish_greeting
+
 #to make ls in nu shell
 function ls
     set -l cmd ls # Start building the Nu command with 'ls'
@@ -22,20 +25,6 @@ function ls
     nu -c "$cmd"
 end
 
-#Command to show most used Commands
-function topcmds
-    set_color green
-    echo "Top 10 Most Used Commands:"
-    set_color normal
-    history | awk '{print $1}' | sort | uniq -c | sort -nr | head -10 | while read -l count cmd
-        set_color cyan
-        printf "%-4s" $count
-        set_color yellow
-        echo $cmd
-        set_color normal
-    end
-end
-
 # disable ctrl i tab Commands
 function fish_user_key_bindings
     bind \ci ''
@@ -43,7 +32,8 @@ end
 
 export EDITOR=nvim
 export VISUAL=nvim
-set -x LANG en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 starship init fish | source
 atuin init --disable-up-arrow fish | source
