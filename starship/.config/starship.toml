@@ -6,6 +6,12 @@ vimcmd_replace_one_symbol = '[r ➜](bold purple)'
 vimcmd_replace_symbol     = '[R ➜](bold purple)'
 vimcmd_visual_symbol      = '[V ➜](bold blue)'
 
+[docker_context]
+disabled = true
+[container]
+disabled = true
+
+
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
 flamingo = "#f2cdcd"

@@ -32,12 +32,10 @@ end
 
 export EDITOR=nvim
 export VISUAL=nvim
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
 
 starship init fish | source
 atuin init --disable-up-arrow fish | source
-zoxide init --cmd cd fish | source
+zoxide init fish | source
 set -gx PATH ~/.npm-global/bin $PATH
 # Start tmux
 tmux
