@@ -4,6 +4,11 @@ pkgs need:
 git lazygit neovim starship zoxide atuin fish nushell yazi tmux fzf fastfetch stow
 ```
 
+To make fish default in arch
+```
+chsh -s /usr/bin/fish
+```
+
 Also clone tpm if you haven't already
 
 ```
