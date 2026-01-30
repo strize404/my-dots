@@ -9,21 +9,14 @@ alias y='yazi'
 alias nv='nvim'
 alias gc='git clone'
 alias lg='lazygit'
+alias lt='eza -T -L1 --icons'
+alias ltt='eza -T -L2 --icons'
+alias lt3='eza -T -L3 --icons'
+# alias ns="nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history"
+# alias nd 'nix develop --command fish'
 
 set -g fish_key_bindings fish_vi_key_bindings
 set -g fish_greeting
-
-#to make ls in nu shell
-function ls
-    set -l cmd ls # Start building the Nu command with 'ls'
-    for arg in $argv
-        # Escape double quotes in the argument and wrap each in quotes
-        set -l escaped_arg (string replace -a '"' '\\"' -- $arg)
-        set cmd $cmd \"$escaped_arg\"
-    end
-    # Execute the constructed command in Nu
-    nu -c "$cmd"
-end
 
 # disable ctrl i tab Commands
 function fish_user_key_bindings

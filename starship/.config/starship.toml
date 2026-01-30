@@ -1,16 +1,13 @@
+[directory]
+home_symbol = ""
+
 [character]
-success_symbol = '[i ➜](bold green)'   # insert mode
-error_symbol   = '[❗➜](bold red)'     # failed cmd
-vimcmd_symbol  = '[n ➜](bold yellow)'
+success_symbol = '[i ➜](bold green)'             # insert mode
+error_symbol = '[❗➜](bold red)'                  # failed cmd
+vimcmd_symbol = '[n ➜](bold yellow)'
 vimcmd_replace_one_symbol = '[r ➜](bold purple)'
-vimcmd_replace_symbol     = '[R ➜](bold purple)'
-vimcmd_visual_symbol      = '[V ➜](bold blue)'
-
-[docker_context]
-disabled = true
-[container]
-disabled = true
-
+vimcmd_replace_symbol = '[R ➜](bold purple)'
+vimcmd_visual_symbol = '[V ➜](bold blue)'
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
