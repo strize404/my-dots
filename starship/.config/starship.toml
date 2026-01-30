@@ -1,6 +1,9 @@
 [directory]
 home_symbol = ""
 
+[container]
+disabled = true
+
 [character]
 success_symbol = '[i ➜](bold green)'             # insert mode
 error_symbol = '[❗➜](bold red)'                  # failed cmd
