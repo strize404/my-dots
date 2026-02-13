@@ -5,6 +5,7 @@ git lazygit neovim starship zoxide atuin fish nushell yazi tmux fzf fastfetch st
 ```
 
 To make fish default in arch
+
 ```
 chsh -s /usr/bin/fish
 ```
@@ -24,6 +25,6 @@ git clone https://github.com/strizee/my-dots.git
 After installing all the pkgs run this following commannd inside the dotfiles dir:
 
 ```
-stow --adopt fastfetch fish nushell nvim starship
+stow --adopt fastfetch fish nushell nvim starship lazygit
 stow tmux
 ```
