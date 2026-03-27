@@ -8,6 +8,9 @@ binds {
     // ─── Application ───
     // Find the names on the terminal if you wish to add more
     Mod+T hotkey-overlay-title="Open terminal" { spawn "ghostty"; }
+    Alt+S hotkey-overlay-title="Open launcher" { spawn "dms" "ipc" "launcher" "open"; }
+    Mod+Shift+C hotkey-overlay-title="Color Picker" { spawn "dms" "color" "pick" "-a"; }
+    Mod+Shift+P hotkey-overlay-title="screenshot clip only" { spawn "dms" "screenshot" "--no-file"; }
 
     // ─── Media Controls ───
     XF86AudioRaiseVolume                allow-when-locked=true { spawn-sh "dms ipc call audio increment 5"; }
@@ -42,10 +45,10 @@ binds {
     Alt+Shift+Down                       { move-window-down; }
 
     // ─── Window Resize ───
-    Mod+Alt+N                            { set-column-width "25%"; }
-    Mod+Alt+E                            { set-column-width "50%"; }
-    Mod+Alt+I                            { set-column-width "75%"; }
-    Mod+Alt+O                            { set-column-width "100%"; }
+    Mod+Alt+H                            { set-column-width "25%"; }
+    Mod+Alt+J                            { set-column-width "50%"; }
+    Mod+Alt+K                            { set-column-width "75%"; }
+    Mod+Alt+L                            { set-column-width "100%"; }
 
     // ─── Workspace Switching ───
     Mod+Down                 cooldown-ms=150 { focus-workspace-down; }
