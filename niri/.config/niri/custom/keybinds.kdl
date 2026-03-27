@@ -1,0 +1,95 @@
+binds {
+
+    // ────────────── Keybindings ──────────────
+    // https://github.com/YaLTeR/niri/wiki/Configuration:-Key-Bindings
+
+    Mod+Shift+ESCAPE                     { show-hotkey-overlay; }
+
+    // ─── Application ───
+    // Find the names on the terminal if you wish to add more
+    Mod+T hotkey-overlay-title="Open terminal" { spawn "ghostty"; }
+
+    // ─── Media Controls ───
+    XF86AudioRaiseVolume                allow-when-locked=true { spawn-sh "dms ipc call audio increment 5"; }
+    XF86AudioLowerVolume                allow-when-locked=true { spawn-sh "dms ipc call audio decrement 5"; }
+    XF86AudioMute                       allow-when-locked=true { spawn-sh "dms ipc call audio mute"; }
+    XF86AudioMicMute                    allow-when-locked=true { spawn-sh "dms ipc call audio micmute"; }
+    XF86AudioNext                       allow-when-locked=true { spawn-sh "dms ipc call mpis next"; }
+    XF86AudioPrev                       allow-when-locked=true { spawn-sh "dms ipc call mpis previous"; }
+    XF86AudioPlay                       allow-when-locked=true { spawn-sh "dms ipc call mpris playPause"; }
+
+    // ─── Brightness Controls ───
+    XF86MonBrightnessUp                 allow-when-locked=true { spawn-sh "dms ipc call brightness increment 1 backlight:intel_backlight"; }
+    XF86MonBrightnessDown               allow-when-locked=true { spawn-sh "dms ipc call brightness decrement 1 backlight:intel_backlight"; }
+    XF86KbdBrightnessUp                 allow-when-locked=true { spawn-sh "dms ipc call brightness increment 1 leds:smc::kbd_backlight"; }
+    XF86KbdBrightnessDown               allow-when-locked=true { spawn-sh "dms ipc call brightness decrement 1 leds:smc::kbd_backlight"; }
+
+    XF86LaunchA                         repeat=false { toggle-overview; }
+    XF86LaunchB                         allow-when-locked=true { spawn-sh "dms ipc launcher open"; }
+
+
+    // ─── Window Movement and Focus ───
+    Alt+Q                               { close-window; }
+
+    Alt+Left                            { focus-column-left; }
+    Alt+Right                           { focus-column-right; }
+    Alt+Up                              { focus-window-up; }
+    Alt+Down                            { focus-window-down; }
+
+    Alt+Shift+Left                       { move-column-left; }
+    Alt+Shift+Right                      { move-column-right; }
+    Alt+Shift+UP                         { move-window-up; }
+    Alt+Shift+Down                       { move-window-down; }
+
+    // ─── Window Resize ───
+    Mod+Alt+N                            { set-column-width "25%"; }
+    Mod+Alt+E                            { set-column-width "50%"; }
+    Mod+Alt+I                            { set-column-width "75%"; }
+    Mod+Alt+O                            { set-column-width "100%"; }
+
+    // ─── Workspace Switching ───
+    Mod+Down                 cooldown-ms=150 { focus-workspace-down; }
+    Mod+Up                   cooldown-ms=150 { focus-workspace-up; }
+    Mod+Shift+Down           cooldown-ms=150 { move-column-to-workspace-down; }
+    Mod+Shift+Up             cooldown-ms=150 { move-column-to-workspace-up; }
+
+    Mod+1                               { focus-workspace 1; }
+    Mod+2                               { focus-workspace 2; }
+    Mod+3                               { focus-workspace 3; }
+    Mod+4                               { focus-workspace 4; }
+    Mod+5                               { focus-workspace 5; }
+    Mod+6                               { focus-workspace 6; }
+    Mod+7                               { focus-workspace 7; }
+    Mod+8                               { focus-workspace 8; }
+    Mod+9                               { focus-workspace 9; }
+
+    Mod+CTRL+1                          { move-column-to-workspace 1; }
+    Mod+CTRL+2                          { move-column-to-workspace 2; }
+    Mod+CTRL+3                          { move-column-to-workspace 3; }
+    Mod+CTRL+4                          { move-column-to-workspace 4; }
+    Mod+CTRL+5                          { move-column-to-workspace 5; }
+    Mod+CTRL+6                          { move-column-to-workspace 6; }
+    Mod+CTRL+7                          { move-column-to-workspace 7; }
+    Mod+CTRL+8                          { move-column-to-workspace 8; }
+    Mod+CTRL+9                          { move-column-to-workspace 9; }
+
+    Mod+TAB                             { focus-workspace-previous; }
+
+    // ─── Modes ───
+    Mod+Shift+F                         { toggle-window-floating; }
+    Mod+F                               { fullscreen-window; }
+    Mod+W                               { toggle-column-tabbed-display; }
+
+    // ─── Screenshots ───
+    Mod+Shift+W                        { screenshot-window; }
+
+    // ─── Emergency Escape Key ───
+    // Use this when a fullscreen app blocks your keybinds.
+    // It disables any active keyboard shortcut inhibitor, restoring control.
+    Mod+ESCAPE                          allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+
+    // ─── Exit / Power ───
+    CTRL+ALT+Delete                     { quit; } // Also quits Niri
+    Mod+Shift+P                         { power-off-monitors; } // Turn off screens (useful for OLED or privacy)
+    Mod+O                               repeat=false { toggle-overview; }
+}

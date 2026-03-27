@@ -1,0 +1,12 @@
+include "custom/mouse.kdl"
+include "custom/keybinds.kdl"
+include "custom/startup.kdl"
+include "custom/winrules.kdl"
+
+include "dms/colors.kdl"
+include "dms/binds.kdl"
+include "dms/layout.kdl"
+include "dms/alttab.kdl"
+include "dms/cursor.kdl"
+include "dms/windowrules.kdl"
+include "dms/outputs.kdl"
