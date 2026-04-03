@@ -1,0 +1,16 @@
+hotkey-overlay {
+    skip-at-startup
+}
+
+layer-rule {
+    place-within-backdrop true
+}
+
+layout {
+    background-color "transparent"
+}
+
+
+window-rule {
+  open-maximized true
+}
