@@ -8,18 +8,15 @@ binds {
     // ─── Application ───
     // Find the names on the terminal if you wish to add more
     Mod+T hotkey-overlay-title="Open terminal" { spawn "ghostty"; }
-    Alt+S hotkey-overlay-title="Open launcher" { spawn "dms" "ipc" "launcher" "open"; }
-    Mod+Shift+C hotkey-overlay-title="Color Picker" { spawn "dms" "color" "pick" "-a"; }
-    Mod+Shift+P hotkey-overlay-title="screenshot clip only" { spawn "dms" "screenshot" "--no-file"; }
 
     // ─── Media Controls ───
     XF86AudioRaiseVolume                allow-when-locked=true { spawn-sh "dms ipc call audio increment 5"; }
     XF86AudioLowerVolume                allow-when-locked=true { spawn-sh "dms ipc call audio decrement 5"; }
     XF86AudioMute                       allow-when-locked=true { spawn-sh "dms ipc call audio mute"; }
     XF86AudioMicMute                    allow-when-locked=true { spawn-sh "dms ipc call audio micmute"; }
-    XF86AudioNext                       allow-when-locked=true { spawn-sh "dms ipc call mpis next"; }
-    XF86AudioPrev                       allow-when-locked=true { spawn-sh "dms ipc call mpis previous"; }
+    XF86AudioPrev                       allow-when-locked=true { spawn-sh "dms ipc call mpris previous"; }
     XF86AudioPlay                       allow-when-locked=true { spawn-sh "dms ipc call mpris playPause"; }
+    XF86AudioNext                       allow-when-locked=true { spawn-sh "dms ipc call mpris next"; }
 
     // ─── Brightness Controls ───
     XF86MonBrightnessUp                 allow-when-locked=true { spawn-sh "dms ipc call brightness increment 1 backlight:intel_backlight"; }
@@ -36,8 +33,8 @@ binds {
 
     Alt+Left                            { focus-column-left; }
     Alt+Right                           { focus-column-right; }
-    Alt+Up                              { focus-window-up; }
-    Alt+Down                            { focus-window-down; }
+    Alt+Up                              { focus-workspace-up; }
+    Alt+Down                            { focus-workspace-down; }
 
     Alt+Shift+Left                       { move-column-left; }
     Alt+Shift+Right                      { move-column-right; }
@@ -45,16 +42,16 @@ binds {
     Alt+Shift+Down                       { move-window-down; }
 
     // ─── Window Resize ───
-    Mod+Alt+H                            { set-column-width "25%"; }
-    Mod+Alt+J                            { set-column-width "50%"; }
-    Mod+Alt+K                            { set-column-width "75%"; }
-    Mod+Alt+L                            { set-column-width "100%"; }
+    Mod+Alt+N                            { set-column-width "25%"; }
+    Mod+Alt+E                            { set-column-width "50%"; }
+    Mod+Alt+I                            { set-column-width "75%"; }
+    Mod+Alt+O                            { set-column-width "100%"; }
 
     // ─── Workspace Switching ───
-    Mod+Down                 cooldown-ms=150 { focus-workspace-down; }
-    Mod+Up                   cooldown-ms=150 { focus-workspace-up; }
-    Mod+Shift+Down           cooldown-ms=150 { move-column-to-workspace-down; }
-    Mod+Shift+Up             cooldown-ms=150 { move-column-to-workspace-up; }
+    Mod+Down                            { focus-window-down; }
+    Mod+Up                              { focus-window-up; }
+    Mod+Shift+Down                      { move-column-to-workspace-down; }
+    Mod+Shift+Up                        { move-column-to-workspace-up; }
 
     Mod+1                               { focus-workspace 1; }
     Mod+2                               { focus-workspace 2; }

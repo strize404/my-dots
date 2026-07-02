@@ -1,0 +1,5 @@
+binds {
+    Alt+S hotkey-overlay-title="Open launcher" { spawn "dms" "ipc" "launcher" "open"; }
+    Mod+Shift+C hotkey-overlay-title="Color Picker" { spawn "dms" "color" "pick" "-a"; }
+    Mod+Shift+p hotkey-overlay-title="screenshot clip only" { spawn "dms" "screenshot" "--no-file"; }
+}
